@@ -1,0 +1,240 @@
+import CodeSlide from 'spectacle-code-slide';
+
+import './index.css';
+import {R3FSlide, RetroSlide} from './slides';
+import CodeExample from './code/code.example'
+import LandingPage from '../src/components/LandingPage';
+
+<R3FSlide>
+    <LandingPage/>
+</R3FSlide>
+
+---
+
+import './retro.css'
+
+<RetroSlide>
+    <h1>The Future of 3D on the Web</h1>
+</RetroSlide>
+
+---
+
+import twitter from '../assets/twitter.jpg'
+
+<img src={twitter} style={{ width: '60vh' }} />
+
+
+---
+
+import rug from '../assets/small-rug.jpeg'
+
+<img src={rug} style={{ width: '80vh' }} />
+
+---
+
+import reviews from '../assets/reviews.jpeg'
+
+<img src={reviews} style={{ width: '60vh' }} />
+
+---
+
+## Expectations vs Reality
+
+---
+
+import rabbitHoles from '../assets/rabbit_hole.png'
+
+<img src={rabbitHoles} style={{ width: '80vh' }} />
+
+---
+
+import reddit from '../assets/reddit.gif'
+
+<img src={reddit} style={{ width: '80vh' }} />
+
+---
+
+import cat from '../assets/small-cat.jpeg'
+
+<img src={cat} style={{ width: '65vh' }} />
+
+---
+
+import chair from '../assets/small-chair.jpeg'
+
+<img src={chair} style={{ width: '100vh' }} />
+
+---
+
+One of the biggest problems in online shopping
+
+<!--
+As seen in the return percentages online we see that - on average - the rate ends up at 30%. One of the biggest reasons for these returns is:
+
+- Looks different than expected (20%)
+- Size is incorrect (22%)
+-->
+
+---
+
+import reasons from '../assets/reasons-of-return.png'
+
+<img src={reasons} style={{ width: '80vh' }} />
+
+---
+
+So, what is happening in the market?
+
+---
+
+import closed from '../assets/closed.jpg'
+
+<img src={closed} style={{ width: '80vh' }} />
+
+---
+
+import covid from '../assets/impact_covid.jpeg'
+
+<img src={covid} style={{ width: '100%' }} />
+
+---
+
+import cartier from '../assets/cartier.mp4'
+import cartierLogo from '../assets/cartier_logo.svg'
+
+<img src={cartierLogo} style={{ width: '20%', marginBottom: '20px' }} />
+
+<video
+  src={cartier}
+  autoPlay
+  loop
+  style={{ width: '100%' }}
+/>
+
+---
+
+import shopifyLogo from '../assets/shopify_logo.svg'
+import shopifyAr from '../assets/shopify_ar.jpeg'
+
+<img src={shopifyLogo} style={{ width: '20%', marginBottom: '20px'}} />
+<img src={shopifyAr} style={{ width: '100%', display: 'block', margin: 'auto' }} />
+
+---
+
+import shopifyLogo from '../assets/shopify_logo.svg'
+import dogs from '../assets/shopify-dogs.png'
+
+<img src={shopifyLogo} style={{ width: '20%', marginBottom: '20px'}} />
+<img src={dogs} style={{ width: '70%', display: 'block', margin: 'auto' }} />
+
+---
+
+import shopifyLogo from '../assets/shopify_logo.svg'
+import fashion from '../assets/shopify-fashion.png'
+
+<img src={shopifyLogo} style={{ width: '20%', marginBottom: '20px'}} />
+<img src={fashion} style={{ width: '70%', display: 'block', margin: 'auto' }}  />
+
+---
+
+Bringing the `expectation` closer to `reality`
+
+---
+
+<!-- TECH PART -->
+
+# Intro to 3D
+
+The browser supports WebGL, which is an implementation of OpenGL, a low level graphics language.
+
+---
+
+import WebGLExample from './code/webgl-hello-world.example'
+
+export default (props) => (
+  <CodeSlide
+    {...props}
+    lang="jsx"
+    code={WebGLExample}
+    ranges={[
+      { loc: [0, 8],},
+      { loc: [8, 15] },
+      { loc: [16, 27] },
+      { loc: [29, 32] },
+      { loc: [37, 47] },
+      { loc: [50, 65] },
+      { loc: [88, 96] },
+      { loc: [114, 124] },
+      { loc: [132, 140] },
+      { loc: [151, 153] }
+    ]}
+  />
+)
+
+---
+
+# Three.js
+
+Three.js is a lovely wrapper that makes WebGL manageable
+
+---
+
+import ThreeJsHelloWorld from './code/three-hello-world.example'
+
+export default (props) => (
+  <CodeSlide
+    {...props}
+    lang="jsx"
+    code={ThreeJsHelloWorld}
+    ranges={[
+      { loc: [0]},
+      { loc: [0, 1], note: 'Start a scene 🔥' },
+      { loc: [2, 8] },
+      { loc: [8, 9] },
+      { loc: [10, 13] },
+      { loc: [14, 24] },
+      { loc: [25, 30] },
+      { loc: [31, 35] },
+      { loc: [36, 41] },
+      { loc: [42, 50] },
+      { loc: [51, 53] },
+      { loc: [54, 62] },
+      { loc: [63, 64] },
+    ]}
+  />
+)
+
+---
+
+# React Three Fiber
+
+`React renderer` for the Three.js elements we've seen.
+
+---
+
+import ReactThreeFiberExample from './code/r3f-hello-world.example'
+
+export default (props) => (
+  <CodeSlide
+    {...props}
+    lang="jsx"
+    code={ReactThreeFiberExample}
+    ranges={[
+      { loc: [0]},
+      { loc: [0, 5] },
+      { loc: [6, 7] },
+      { loc: [7, 11] },
+      { loc: [12, 18] },
+      { loc: [19, 20] },
+      { loc: [20, 25] },
+      { loc: [26, 30] },
+      { loc: [30, 34] },
+      { loc: [38, 39] },
+      { loc: [40, 41] },
+      { loc: [41, 42] },
+      { loc: [43, 47] },
+    ]}
+  />
+)
+
+---
