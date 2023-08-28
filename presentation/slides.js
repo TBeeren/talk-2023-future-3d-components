@@ -56,7 +56,13 @@ const lightComponents = {
 };
 
 export const LightSlide = ({ children, ...rest }) => (
-  <Slide bgColor="white" contentStyles={{ maxHeight: "100vh" }} {...rest}>
+  <Slide bgColor="FFFFF0" contentStyles={{ maxHeight: "100vh" }} {...rest}>
+    <MDXProvider components={lightComponents}>{children}</MDXProvider>
+  </Slide>
+);
+
+export const ChapterSlide = ({ children, ...rest }) => (
+  <Slide bgColor="FFFFF0" contentStyles={{ maxHeight: "100vh" }} {...rest}>
     <MDXProvider components={lightComponents}>{children}</MDXProvider>
   </Slide>
 );
@@ -84,8 +90,40 @@ export const R3FSlide = ({ children, ...rest }) => (
   </Slide>
 );
 
-export const RetroSlide = ({ children, ...rest }) => (
-  <Slide bgColor="#1d1f21" contentStyles={{
+export const RetroSlide = ({ children, ...rest }) => {
+  const minutes = new Date().getMinutes();
+  const time = `${new Date().getHours()}:${minutes < 10 ? `0${minutes}` : minutes}`;
+  return (
+    <Slide bgColor="#1d1f21" contentStyles={{
+      maxHeight: "100%",
+      maxWidth: "100%",
+      width: "100%",
+      height: "100%",
+      padding: "0",
+      margin: "0"
+    }} {...rest}
+    >
+      <MDXProvider components={components}>{
+        <div>
+          <div className="scanlines" />
+          <div className="intro-wrap">
+            <div className="noise" />
+            <div className="noise noise-moving" />
+            <div className="play">Tim Beeren</div>
+            <div className="time">{time}</div>
+            <div className="recordSpeed">Sept,2023</div>
+            <div className="content">
+              {children}
+            </div>
+          </div>
+        </div>
+      }</MDXProvider>
+    </Slide>
+  );
+};
+
+export const LandingSlide = ({ children, ...rest }) => (
+  <Slide bgColor="#12071f" contentStyles={{
     maxHeight: "100%",
     maxWidth: "100%",
     width: "100%",
@@ -96,13 +134,9 @@ export const RetroSlide = ({ children, ...rest }) => (
   >
     <MDXProvider components={components}>{
       <div>
-        <div className="scanlines" />
         <div className="intro-wrap">
-          <div className="noise" />
-          <div className="noise noise-moving" />
           <div className="play">Tim Beeren</div>
-          <div className="time">{`${new Date().getHours()}:${new Date().getMinutes()}`}</div>
-          <div className="recordSpeed">Sept,2023</div>
+          <div className="recordSpeed">Sept 2023</div>
           <div className="content">
             {children}
           </div>

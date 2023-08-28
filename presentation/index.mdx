@@ -1,7 +1,7 @@
 import CodeSlide from 'spectacle-code-slide';
 
 import './index.css';
-import {R3FSlide, RetroSlide} from './slides';
+import {R3FSlide, RetroSlide, ChapterSlide} from './slides';
 import CodeExample from './code/code.example'
 import LandingPage from '../src/components/LandingPage';
 
@@ -11,10 +11,9 @@ import LandingPage from '../src/components/LandingPage';
 
 ---
 
-import './retro.css'
-
 <RetroSlide>
-    <h1>The Future of 3D on the Web</h1>
+    <h2 className="white">The Future of 3d on the Web</h2>
+    <span>press 'space' to start</span>
 </RetroSlide>
 
 ---
@@ -38,8 +37,9 @@ import reviews from '../assets/reviews.jpeg'
 
 ---
 
-## Expectations vs Reality
-
+<ChapterSlide>
+    <h1>Expectations vs Reality</h1>
+</ChapterSlide>
 ---
 
 import rabbitHoles from '../assets/rabbit_hole.png'
@@ -83,7 +83,9 @@ import reasons from '../assets/reasons-of-return.png'
 
 ---
 
-So, what is happening in the market?
+<ChapterSlide>
+    <h1>So, what is happening in the market?</h1>
+</ChapterSlide>
 
 ---
 
@@ -143,8 +145,13 @@ Bringing the `expectation` closer to `reality`
 
 <!-- TECH PART -->
 
-# Intro to 3D
+<ChapterSlide>
+    <h1>GPU, WebGL, ThreeJS, R3F</h1>
+</ChapterSlide>
 
+---
+
+## WebGL
 The browser supports WebGL, which is an implementation of OpenGL, a low level graphics language.
 
 ---

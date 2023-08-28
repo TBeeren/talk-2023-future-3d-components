@@ -58,11 +58,17 @@ const Controls = ({ zoom, focus, pos = new THREE.Vector3(), look = new THREE.Vec
   return useFrame((state, delta) => {
     const zoomedPos = focus.current.position;
     if (zoom) {
-      pos.set(zoomedPos.x + 0.15, zoomedPos.y + 0.04, zoomedPos.z - 0.1);
+      pos.set(zoomedPos.x + 0.15, zoomedPos.y + 0.04, zoomedPos.z - 0.11);
       look.set(zoomedPos.x + 0.14, zoomedPos.y + 0.01, zoomedPos.z - 0.2);
+      if (state.camera.fov > 35) {
+        state.camera.fov -= 0.2;
+      }
     } else {
       pos.set(-0.03, 0.05, 1.6);
       look.set(0, 0.05, 1.4);
+      if (state.camera.fov < 50) {
+        state.camera.fov += 1;
+      }
     }
 
     state.camera.position.lerp(pos, 0.4);

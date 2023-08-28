@@ -1,0 +1,38 @@
+.noise {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+.intro-wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: #fff;
+    font-size: 2rem;
+    width: 100vw;
+    height: 100vh;
+}
+.intro-wrap .play {
+    position: absolute;
+    left: 2rem;
+    top: 2rem;
+}
+.intro-wrap .time {
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+}
+.intro-wrap .recordSpeed {
+    position: absolute;
+    left: 2rem;
+    bottom: 2rem;
+}
+.content {
+    justify-content: center;
+    display: flex;
+    margin: auto;
+    align-items: center;
+    height: 100vh;
+}

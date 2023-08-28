@@ -20,9 +20,10 @@ const LandingPage = () => (
     shadows
     camera={{
       fov: 50,
-      position: [1, 0.3, 1.8]
+      position: [-0.03, 0.05, 1.6]
     }}
   >
+
     <color attach="background" args={["#12071f"]} />
     <directionalLight castShadow position={[1, 2, 3]} intensity={2} shadow-normalBias={0.04}/>
     <ambientLight intensity={0.2}/>

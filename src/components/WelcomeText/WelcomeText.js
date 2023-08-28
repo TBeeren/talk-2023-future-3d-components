@@ -4,7 +4,7 @@ import { FontLoader } from "three/addons/loaders/FontLoader";
 
 const WelcomeText = () => {
   const textRef = useRef();
-  const text = "Hello Spaces Summit";
+  const text = "Spaces Summit 2023";
   const graphikFont = new FontLoader().parse(Graphik);
   const textOptions = {
     font: graphikFont,
