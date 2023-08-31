@@ -1,9 +1,20 @@
 import CodeSlide from 'spectacle-code-slide';
 
 import './index.css';
-import {R3FSlide, RetroSlide, ChapterSlide} from './slides';
+import './font/Produkt-Light.ttf';
+
+import {R3FSlide, RetroSlide, ChapterSlide, SpacesSummitSlide} from './slides';
 import CodeExample from './code/code.example'
+
 import LandingPage from '../src/components/LandingPage';
+import Cube from '../src/components/Cube'
+import SpacesSummit from '../src/components/SpacesSummit'
+
+<SpacesSummitSlide>
+    <SpacesSummit/>
+</SpacesSummitSlide>
+
+---
 
 <R3FSlide>
     <LandingPage/>
@@ -37,9 +48,8 @@ import reviews from '../assets/reviews.jpeg'
 
 ---
 
-<ChapterSlide>
-    <h1>Expectations vs Reality</h1>
-</ChapterSlide>
+# Expectations vs Reality
+
 ---
 
 import rabbitHoles from '../assets/rabbit_hole.png'
@@ -60,20 +70,7 @@ import cat from '../assets/small-cat.jpeg'
 
 ---
 
-import chair from '../assets/small-chair.jpeg'
-
-<img src={chair} style={{ width: '100vh' }} />
-
----
-
 One of the biggest problems in online shopping
-
-<!--
-As seen in the return percentages online we see that - on average - the rate ends up at 30%. One of the biggest reasons for these returns is:
-
-- Looks different than expected (20%)
-- Size is incorrect (22%)
--->
 
 ---
 
@@ -83,9 +80,7 @@ import reasons from '../assets/reasons-of-return.png'
 
 ---
 
-<ChapterSlide>
-    <h1>So, what is happening in the market?</h1>
-</ChapterSlide>
+# How do we match the expectation?
 
 ---
 
@@ -96,6 +91,8 @@ import closed from '../assets/closed.jpg'
 ---
 
 import covid from '../assets/impact_covid.jpeg'
+
+Impact of covid-19 on commerce
 
 <img src={covid} style={{ width: '100%' }} />
 
@@ -143,15 +140,26 @@ Bringing the `expectation` closer to `reality`
 
 ---
 
-<!-- TECH PART -->
-
-<ChapterSlide>
-    <h1>GPU, WebGL, ThreeJS, R3F</h1>
-</ChapterSlide>
+# How do you create 3D components?
 
 ---
 
-## WebGL
+import triangles from '../assets/triangles.png'
+
+Triangles, triangles and more triangles
+
+<img src={triangles} style={{ width: '80%', marginBottom: '20px'}} />
+
+
+---
+
+import dolphin from '../assets/dolphin.png'
+
+<img src={dolphin} style={{ width: '80%', marginBottom: '20px'}} />
+
+---
+
+# WebGL
 The browser supports WebGL, which is an implementation of OpenGL, a low level graphics language.
 
 ---
@@ -180,9 +188,15 @@ export default (props) => (
 
 ---
 
+import webglTriangle from '../assets/webgl-triangle.png';
+
+<img src={webglTriangle} style={{ width: '75%' }} />
+
+---
+
 # Three.js
 
-Three.js is a lovely wrapper that makes WebGL manageable
+Three.js is a wrapper that makes WebGL manageable
 
 ---
 
@@ -195,7 +209,7 @@ export default (props) => (
     code={ThreeJsHelloWorld}
     ranges={[
       { loc: [0]},
-      { loc: [0, 1], note: 'Start a scene 🔥' },
+      { loc: [0, 1] },
       { loc: [2, 8] },
       { loc: [8, 9] },
       { loc: [10, 13] },
@@ -213,9 +227,37 @@ export default (props) => (
 
 ---
 
+import cube from '../assets/cube.mp4';
+
+<video
+  src={cube}
+  autoPlay
+  loop
+  style={{ width: '60%' }}
+/>
+
+---
+
+import cubeWireframe from '../assets/cube-wireframe.mp4';
+
+<video
+  src={cubeWireframe}
+  autoPlay
+  loop
+  style={{ width: '60%' }}
+/>
+
+---
+
 # React Three Fiber
 
 `React renderer` for the Three.js elements we've seen.
+
+---
+
+ReactDOM has `div`, `h1`…
+
+ReactThreeFiber has `boxGeometry`, `ambientLight`…
 
 ---
 
@@ -245,3 +287,15 @@ export default (props) => (
 )
 
 ---
+
+<R3FSlide>
+    <Cube/>
+</R3FSlide>
+
+---
+
+# Want to know more?
+
+Course by Bruno Simon: `https://threejs-journey.com/`
+
+or let's have a coffee! 😁

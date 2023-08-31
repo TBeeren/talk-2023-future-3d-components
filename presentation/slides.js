@@ -62,7 +62,7 @@ export const LightSlide = ({ children, ...rest }) => (
 );
 
 export const ChapterSlide = ({ children, ...rest }) => (
-  <Slide bgColor="FFFFF0" contentStyles={{ maxHeight: "100vh" }} {...rest}>
+  <Slide bgColor="#12071f" contentStyles={{ maxHeight: "100vh" }} {...rest}>
     <MDXProvider components={lightComponents}>{children}</MDXProvider>
   </Slide>
 );
@@ -77,7 +77,7 @@ export const CodeSlide = ({ children, ...rest }) => (
 
 
 export const R3FSlide = ({ children, ...rest }) => (
-  <Slide bgColor="#1d1f21" contentStyles={{
+  <Slide bgColor="#12071f" contentStyles={{
     maxHeight: "100%",
     maxWidth: "100%",
     width: "100%",
@@ -143,5 +143,17 @@ export const LandingSlide = ({ children, ...rest }) => (
         </div>
       </div>
     }</MDXProvider>
+  </Slide>
+);
+
+export const SpacesSummitSlide = ({ children, ...rest }) => (
+  <Slide bgColor="#0000A4" contentStyles={{
+    maxHeight: "100%",
+    maxWidth: "100%",
+    width: "100%",
+    height: "100%"
+  }} {...rest}
+  >
+    <MDXProvider components={components}>{children}</MDXProvider>
   </Slide>
 );

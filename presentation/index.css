@@ -1,5 +1,17 @@
 @import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
 
+@font-face {
+  font-family: "ProduktLight";
+  src: local("ProduktLight"),
+  url("./font/Produkt-Light.ttf");
+}
+
+@font-face {
+  font-family: "ProduktSuper";
+  src: local("ProduktSuper"),
+  url("./font/Produkt-Super.ttf");
+}
+
 .react-live-dark pre.prism-code {
   background: black !important;
 }
@@ -10,10 +22,14 @@ body {
 }
 
 h1, h2, h3, h4, h5 {
-  background: linear-gradient(142deg, rgb(113, 175, 190) 12% , rgb(60, 183, 169) 100%);
+  background: linear-gradient(142deg, rgb(10, 191, 229) 12% , rgb(68, 255, 229) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-size: 100%;
+}
+
+span {
+  color: white
 }
 
 code {
@@ -26,6 +42,7 @@ pre > code {
 
 p {
   font-size: 1.2em !important;
+  margin: 0.3em 0
 }
 
 html,
