@@ -4,7 +4,7 @@
   "description": "Ready to use presentation format for your next talk",
   "scripts": {
     "clean": "rimraf dist",
-    "build": "webpack",
+    "build": "webpack --config webpack.prod.js --mode production",
     "lint": "eslint --ext .js,.jsx . --fix",
     "start": "cross-env NODE_ENV=development node server.js"
   },
@@ -19,6 +19,7 @@
     "spectacle-code-slide": "^0.5.2",
     "spectacle-renderer": "^0.0.3",
     "styled-components": "^6.0.4",
+    "terser-webpack-plugin": "^5.3.9",
     "ttf-loader": "^1.0.2"
   },
   "devDependencies": {

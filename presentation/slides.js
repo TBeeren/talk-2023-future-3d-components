@@ -157,3 +157,17 @@ export const SpacesSummitSlide = ({ children, ...rest }) => (
     <MDXProvider components={components}>{children}</MDXProvider>
   </Slide>
 );
+
+export const DarkSlide = ({ children, ...rest }) => (
+  <Slide bgColor="#12071f" contentStyles={{
+    maxHeight: "100vh",
+    maxWidth: "1200px",
+    width: "100%",
+    height: "100%"
+
+  }}{...rest}
+  >
+    <MDXProvider components={components}>{children}</MDXProvider>
+  </Slide>
+);
+

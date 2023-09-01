@@ -3,29 +3,21 @@ import CodeSlide from 'spectacle-code-slide';
 import './index.css';
 import './font/Produkt-Light.ttf';
 
-import {R3FSlide, RetroSlide, ChapterSlide, SpacesSummitSlide} from './slides';
+import {R3FSlide, RetroSlide, ChapterSlide, SpacesSummitSlide, DarkSlide} from './slides';
 import CodeExample from './code/code.example'
 
 import LandingPage from '../src/components/LandingPage';
 import Cube from '../src/components/Cube'
 import SpacesSummit from '../src/components/SpacesSummit'
+import WebView from "../src/components/WebView"
 
 <SpacesSummitSlide>
     <SpacesSummit/>
 </SpacesSummitSlide>
 
----
-
-<R3FSlide>
-    <LandingPage/>
-</R3FSlide>
-
----
-
-<RetroSlide>
-    <h2 className="white">The Future of 3d on the Web</h2>
-    <span>press 'space' to start</span>
-</RetroSlide>
+<!--
+Hi everyone! Thanks for being here today! I hope you all are as excited as me to dive into the 3D space of the web! So, let's dive into it.
+-->
 
 ---
 
@@ -33,6 +25,10 @@ import twitter from '../assets/twitter.jpg'
 
 <img src={twitter} style={{ width: '60vh' }} />
 
+<!--
+So a while ago I was bored so I started scrolling on Twitter or X or whatever?
+While ignoring loads of tweets by Elon, this tweet caught my eye:
+-->
 
 ---
 
@@ -40,15 +36,31 @@ import rug from '../assets/small-rug.jpeg'
 
 <img src={rug} style={{ width: '80vh' }} />
 
+<!--
+This sad guy called Adam bought a carpet online, thinking it would be a big carpet.
+However, after delivery founding out it was the perfect size to wipe his tears of disappointment.
+-->
+
 ---
 
 import reviews from '../assets/reviews.jpeg'
 
 <img src={reviews} style={{ width: '60vh' }} />
 
+<!--
+The other part that stood out to me is that someone was happy enough to give it a 5 star review haha.
+-->
+
 ---
 
 # Expectations vs Reality
+
+<!--
+So this is a perfect example of how the expectation is different than the reality. And this is a big topic within online purchases.
+Customers look at a couple pictures online, maybe a couple specifications and last but not least some reviews - and decide whether or not to buy it.
+
+However, how do you really know what you've ordered?
+-->
 
 ---
 
@@ -56,11 +68,22 @@ import rabbitHoles from '../assets/rabbit_hole.png'
 
 <img src={rabbitHoles} style={{ width: '80vh' }} />
 
+<!--
+And well, I have to admit, that I've been having way to much joy diving into this rabbit hole of these issues.
+-->
+
 ---
 
 import reddit from '../assets/reddit.gif'
 
 <img src={reddit} style={{ width: '80vh' }} />
+
+<!--
+And while scrolling through the comments of this tweet, I found a link into a sub-reddit where loads of people share their disappointing online purchases.
+It mostly stood out to me that the problem is that big, that there is an entire community around it.
+
+Because you know, whenever there will be a sub-reddit created for a specific thread - it's real.
+-->
 
 ---
 
@@ -68,9 +91,17 @@ import cat from '../assets/small-cat.jpeg'
 
 <img src={cat} style={{ width: '65vh' }} />
 
+<!--
+This little guy also looks really disappointed by his new toy.
+-->
+
 ---
 
 One of the biggest problems in online shopping
+
+<!--
+And while diving into the numbers, it's actually one of the biggest problems in e-commerce.
+-->
 
 ---
 
@@ -78,15 +109,28 @@ import reasons from '../assets/reasons-of-return.png'
 
 <img src={reasons} style={{ width: '80vh' }} />
 
+<!--
+It's actually one of the primary reasons why people return their order - since the `product received looks different`.
+-->
+
 ---
 
 # How do we match the expectation?
+
+<!--
+So, how do we match the expectation to be closer to the reality?
+-->
 
 ---
 
 import closed from '../assets/closed.jpg'
 
 <img src={closed} style={{ width: '80vh' }} />
+
+<!--
+So before getting to the real problem, let's go back to the start of 2020.
+Covid started to spread, and loads of physical stored started to close down.
+-->
 
 ---
 
@@ -95,6 +139,51 @@ import covid from '../assets/impact_covid.jpeg'
 Impact of covid-19 on commerce
 
 <img src={covid} style={{ width: '100%' }} />
+
+<!--
+Because of that, loads of niches were impacted.
+In this graph we're seeing the impact of Covid-19 on the overall sales being made offline and online.
+-->
+
+---
+
+import covidZoom1 from '../assets/impact_covid_zoom1.jpeg'
+
+<img src={covidZoom1} style={{ width: '100%' }} />
+
+<!--
+In there you'll see that quite some grew such as supermarkets,
+in which 100% is normal and the additional 60% was basically me buying toilet paper.
+-->
+
+---
+
+import toiletpaper from '../assets/toiletpaper.gif'
+
+<img src={toiletpaper} style={{ width: '60%' }} />
+
+---
+
+import covidZoom2 from '../assets/impact_covid_zoom2.jpeg'
+
+<img src={covidZoom2} style={{ width: '100%' }} />
+
+<!--
+But more interestingly enough, are the ones that didn't do well. For tourism and entertainment we already know the reasons,
+but let's look into the 3rd most affected, which is jewelry
+-->
+
+---
+
+import watch from '../assets/watch.jpeg'
+
+<img src={watch} style={{ width: '100%' }} />
+
+<!--
+Imagine having a big interest into expensive watches,
+I'd like too see hands, who of you would dare to buy a piece of 2k online? 👋🏼
+Haha alright, well this is basically the problem they encountered as well
+-->
 
 ---
 
@@ -110,6 +199,12 @@ import cartierLogo from '../assets/cartier_logo.svg'
   style={{ width: '100%' }}
 />
 
+<!--
+Well, so because of this issue - Cartier had to be innovative. Due to Covid, customers could not see the time piece in the physical store,
+so they started experimenting with 3D models to bring the expectation closer to the reality, which ended up gaining trust from their audience
+which resulted in a boost of conversion and reduction in returns.
+-->
+
 ---
 
 import shopifyLogo from '../assets/shopify_logo.svg'
@@ -117,6 +212,11 @@ import shopifyAr from '../assets/shopify_ar.jpeg'
 
 <img src={shopifyLogo} style={{ width: '20%', marginBottom: '20px'}} />
 <img src={shopifyAr} style={{ width: '100%', display: 'block', margin: 'auto' }} />
+
+<!--
+Another example is Shopify. As they also saw this problem occurring from their clients using shopify as store.
+So they created a feature for their Shopify+ members to add a 3D view of their product.
+-->
 
 ---
 
@@ -126,6 +226,11 @@ import dogs from '../assets/shopify-dogs.png'
 <img src={shopifyLogo} style={{ width: '20%', marginBottom: '20px'}} />
 <img src={dogs} style={{ width: '70%', display: 'block', margin: 'auto' }} />
 
+<!--
+One of the stores who tried this feature, was Gunner Kennels - which is known for their `Kennels`.
+A research paper from Shopify shows how this 3D/AR feature reduced their returns by 5% and boosted conversions by 40%.
+-->
+
 ---
 
 import shopifyLogo from '../assets/shopify_logo.svg'
@@ -134,13 +239,75 @@ import fashion from '../assets/shopify-fashion.png'
 <img src={shopifyLogo} style={{ width: '20%', marginBottom: '20px'}} />
 <img src={fashion} style={{ width: '70%', display: 'block', margin: 'auto' }}  />
 
+<!--
+So they tried it with other partners, and found an overall positive trend where conversion tends to boost and returns decline - based on the niche.
+-->
+
 ---
 
-Bringing the `expectation` closer to `reality`
+# How does this work?
+
+<!--
+So this is cool right? It looks promising, so it sparked my curiosity into the real question
+'How do we create these 3D components on the web?'
+-->
 
 ---
 
-# How do you create 3D components?
+import applePreview from '../assets/apple-preview.mp4'
+
+<video
+  src={applePreview}
+  autoPlay
+  loop
+  style={{ width: '100%' }}
+/>
+
+<!--
+So as a real researcher, I started by looking at our competitors.
+And I have to confess, I’m one of these guys who goes quite often to the Apple website - not to buy an item -
+but to look at their amazing web animations.
+
+And so I did it again, to check how they do their 3d animations on scroll. Awesome, isn't it?
+-->
+
+---
+
+import appleNetwork from '../assets/apple-network.mp4'
+
+<video
+  src={appleNetwork}
+  autoPlay
+  loop
+  style={{ width: '100%' }}
+/>
+
+<!--
+And surprisingly enough I found out that it’s not a real model,
+but they’re rendering images on scroll - as you can see here in the networking tab.
+-->
+
+---
+
+import canon from '../assets/canon.mp4'
+
+<video
+  src={canon}
+  autoPlay
+  loop
+  style={{ width: '100%' }}
+/>
+
+<!--
+And while diving further into this space I found a javascript library which people used to create stunning 3d websites.
+Here are some examples:
+
+And yeah, they might have put all their into creating the 3D experience and not that much into the buggy text 😆
+-->
+
+---
+
+# GPU, WebGL and Triangles!
 
 ---
 
@@ -150,6 +317,9 @@ Triangles, triangles and more triangles
 
 <img src={triangles} style={{ width: '80%', marginBottom: '20px'}} />
 
+<!--
+
+-->
 
 ---
 
@@ -157,10 +327,18 @@ import dolphin from '../assets/dolphin.png'
 
 <img src={dolphin} style={{ width: '80%', marginBottom: '20px'}} />
 
+<!--
+
+-->
+
 ---
 
 # WebGL
 The browser supports WebGL, which is an implementation of OpenGL, a low level graphics language.
+
+<!--
+
+-->
 
 ---
 
@@ -192,11 +370,19 @@ import webglTriangle from '../assets/webgl-triangle.png';
 
 <img src={webglTriangle} style={{ width: '75%' }} />
 
+<!--
+
+-->
+
 ---
 
 # Three.js
 
 Three.js is a wrapper that makes WebGL manageable
+
+<!--
+
+-->
 
 ---
 
@@ -236,6 +422,10 @@ import cube from '../assets/cube.mp4';
   style={{ width: '60%' }}
 />
 
+<!--
+
+-->
+
 ---
 
 import cubeWireframe from '../assets/cube-wireframe.mp4';
@@ -247,17 +437,29 @@ import cubeWireframe from '../assets/cube-wireframe.mp4';
   style={{ width: '60%' }}
 />
 
+<!--
+
+-->
+
 ---
 
 # React Three Fiber
 
 `React renderer` for the Three.js elements we've seen.
 
+<!--
+
+-->
+
 ---
 
 ReactDOM has `div`, `h1`…
 
 ReactThreeFiber has `boxGeometry`, `ambientLight`…
+
+<!--
+
+-->
 
 ---
 
@@ -291,6 +493,33 @@ export default (props) => (
 <R3FSlide>
     <Cube/>
 </R3FSlide>
+
+<!--
+
+-->
+
+---
+
+<R3FSlide>
+    <LandingPage/>
+</R3FSlide>
+
+<!--
+
+-->
+
+---
+
+<!-- IDEA: Show a 'Thanks' slide in here -->
+
+<RetroSlide>
+    <h2 className="white">The Future of 3d on the Web</h2>
+    <span>press 'space' to start</span>
+</RetroSlide>
+
+<!--
+
+-->
 
 ---
 

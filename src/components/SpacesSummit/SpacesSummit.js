@@ -9,8 +9,10 @@ import train from "../../../assets/train.png";
 
 const SpacesSummit = () => (
   <Wrapper>
-    <HeaderText>The Future of 3D on the Web</HeaderText>
-    <ProduktText>Tim Beeren | Spaces Summit <Train/></ProduktText>
+    <TextWrapper>
+      <HeaderText>The Future of 3D on the Web <Train/></HeaderText>
+      <ProduktText>Tim Beeren | Spaces Summit</ProduktText>
+    </TextWrapper>
     <SpacesSummitIcon />
     <BolLogo/>
     <SpacesSummitBanner/>
@@ -39,7 +41,7 @@ const SpacesSummitBanner = styled.img.attrs(() => ({ src: spacesSummitBanner }))
 `;
 
 const Train = styled.img.attrs(() => ({ src: train })) `
-    width: 6%;
+    width: 10%;
     padding-left: 8px;
 `;
 
@@ -49,10 +51,14 @@ const Wrapper = styled.div `
   height: 100%;
 `;
 
-const ProduktText = styled.h1 `
-    position: absolute;
-    bottom: 30%;
-    left: 9%;
+const TextWrapper = styled.div `
+    padding: 10% 7%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+`;
+
+const ProduktText = styled.p `
     font-family: 'ProduktLight',serif;
     font-size: 1.2em;
     text-align: left;
@@ -64,12 +70,8 @@ const ProduktText = styled.h1 `
 `;
 
 const HeaderText = styled.h1 `
-  position: absolute;
-  top: 20%;
-  left: 9%;
   font-family: 'ProduktSuper',serif;
   font-size: 3.4em;
-  max-width: 60%;
   text-align: left;
   line-height: 1.1em;
   color: #1EADFF !important;
@@ -77,6 +79,10 @@ const HeaderText = styled.h1 `
   background-size: 0;
   -webkit-text-fill-color: #1EADFF;
   font-weight: 100;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  width: 1000px;
 `;
 
 export default SpacesSummit;
