@@ -2,8 +2,7 @@ import React, { Suspense, useRef } from "react";
 import { Plane, useGLTF } from "@react-three/drei";
 import * as THREE from "three";
 import screenshot from "../../../assets/screenshot.png";
-
-const model = React.lazy(() => import("./arcade.glb"));
+import model from "./arcade.glb";
 
 export const Arcade = (props) => {
   const { nodes, materials } = useGLTF(model);
