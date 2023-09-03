@@ -9,6 +9,7 @@ import CodeExample from './code/code.example'
 import LandingPage from '../src/components/LandingPage';
 import Cube from '../src/components/Cube'
 import SpacesSummit from '../src/components/SpacesSummit'
+import Ending from '../src/components/Ending'
 import WebView from "../src/components/WebView"
 
 <SpacesSummitSlide>
@@ -16,7 +17,7 @@ import WebView from "../src/components/WebView"
 </SpacesSummitSlide>
 
 <!--
-Hi everyone! Thanks for being here today! I hope you all are as excited as me to dive into the 3D space of the web! So, let's dive into it.
+Hi everyone! Thanks for being here!
 -->
 
 ---
@@ -302,32 +303,44 @@ import canon from '../assets/canon.mp4'
 And while diving further into this space I found a javascript library which people used to create stunning 3d websites.
 Here are some examples:
 
-And yeah, they might have put all their into creating the 3D experience and not that much into the buggy text 😆
+And yeah, they might have put all their time and energy into creating the 3D experience and not that much into the buggy text 😆
 -->
 
 ---
 
-# GPU, WebGL and Triangles!
-
----
-
-import triangles from '../assets/triangles.png'
-
-Triangles, triangles and more triangles
-<img src={triangles} style={{ width: '80%', marginBottom: '20px'}} />
+# GPU, WebGL and Vertices!
 
 <!--
-
+Let's talk about the tech!
 -->
 
 ---
 
-import dolphin from '../assets/dolphin.png'
+import CpuGpu from '../assets/cpu_gpu.png'
 
-<img src={dolphin} style={{ width: '80%', marginBottom: '20px'}} />
+CPU vs GPU
+<img src={CpuGpu} style={{ width: '80%', marginBottom: '20px'}} />
 
 <!--
+When talking about 3D, there is no way to escape some slight low-level knowledge of the hardware.
 
+While a typical CPU today will have anywhere between 2 and 16 cores, a GPU typically have thousands of cores.
+Rather than processing tasks serially (in order) like a CPU, a GPU breaks up tasks and uses parallel processing for rendering.
+These processes are insanely optimised so that the GPU is able to render computational heavy renders within a blink of your eye.
+-->
+
+---
+
+import openGL from '../assets/opengl.jpeg'
+
+<img src={openGL} style={{ width: '80%', marginBottom: '20px'}} />
+
+<!--
+The CPU handles high-level JavaScript code and data preparation, while the GPU specializes in parallel processing to render complex graphics.
+Shaders, written in GLSL, control the transformations and visual effects applied to vertices and fragments.
+
+And since it's hard for the browser to detect whenever the GPU has to play a role, we can send instructions to the GPU using OpenGL.
+For the web, WebGL has been created as library on OpenGL.
 -->
 
 ---
@@ -336,7 +349,7 @@ import dolphin from '../assets/dolphin.png'
 The browser supports WebGL, which is an implementation of OpenGL, a low level graphics language.
 
 <!--
-
+So WebGL, how does it work? And is it easy to develop with?
 -->
 
 ---
@@ -358,10 +371,18 @@ export default (props) => (
       { loc: [88, 96] },
       { loc: [114, 124] },
       { loc: [132, 140] },
-      { loc: [151, 153] }
+      { loc: [151, 153] },
+      { loc: [157, 168] }
     ]}
   />
 )
+
+<!--
+So this is an Hello Worls example in vanilla WebGL.
+And we're not gonna go through this code line by line, frankly I have no idea what is happening here.
+
+But I just want to show you how much code it requires to create a hello world example.
+-->
 
 ---
 
@@ -370,7 +391,8 @@ import webglTriangle from '../assets/webgl-triangle.png';
 <img src={webglTriangle} style={{ width: '75%' }} />
 
 <!--
-
+And when running this, I expected this much of code to be something really cool once it is rendered in the browser.
+However, turns out it just a simple 2 dimensional pink triangle.
 -->
 
 ---
@@ -380,7 +402,7 @@ import webglTriangle from '../assets/webgl-triangle.png';
 Three.js is a wrapper that makes WebGL manageable
 
 <!--
-
+So thankfully, we don't have to write vanilla WebGL - since developers created a library on top of WebGL called ThreeJS.
 -->
 
 ---
@@ -410,6 +432,26 @@ export default (props) => (
   />
 )
 
+<!--
+So here is an hello world example within ThreeJS.
+
+First, we'll have to create a scene. A scene is basically the 3d canvas.
+Next, we'll create a camera. For this example a perspective camera which makes things that are further away appear smaller (as in real life).
+
+We'll create a geometry, which you can see as a the representation of the shape - in this case - a cube of 1 by 1 by 1.
+We also want to provide our geometry (the cube) with a appearance, and therefore we'll create a material.
+For this example, we'll give it a solid color.
+
+So now we have the geometry and the material, but we want to glue those together, so that our cube the color we just defined.
+And to do this, we'll need a Mesh - followed by adding it to the scene.
+
+Last but now least, we'll add some lighting to the scene. Since by default it will be dark.
+And it would be sad to keep the lights turned off right?
+
+Again, we'll add it to the scene to make it visual.
+And we'll call the render loop, which will be called by the browser 60 times a second, to run on 60FPS.
+-->
+
 ---
 
 import cube from '../assets/cube.mp4';
@@ -422,22 +464,12 @@ import cube from '../assets/cube.mp4';
 />
 
 <!--
+So once this will be rendered, we've made ourselves this beautiful rotating Cube!
+And something remarkable here is the lighting bouncing off the object.
+You might think, we can also do this with plain css right?
 
--->
-
----
-
-import cubeWireframe from '../assets/cube-wireframe.mp4';
-
-<video
-  src={cubeWireframe}
-  autoPlay
-  loop
-  style={{ width: '60%' }}
-/>
-
-<!--
-
+And that is true for a big part, however you won't get the reflections as nice as a 'real' 3d model.
+Since the css animations are not a real 3d space.
 -->
 
 ---
@@ -447,7 +479,11 @@ import cubeWireframe from '../assets/cube-wireframe.mp4';
 `React renderer` for the Three.js elements we've seen.
 
 <!--
+Alright so, this is awesome right! Way easier to implement,
+however it's still vanilla javascript - which is hard to combine with a modern library as React.
 
+So this is where React Three Fiber comes into play.
+And the cool thing is, React Three Fiber is a React renderer for ThreeJS.
 -->
 
 ---
@@ -457,7 +493,13 @@ ReactDOM has `div`, `h1`…
 ReactThreeFiber has `boxGeometry`, `ambientLight`…
 
 <!--
+And with a renderer I mean, that is already has loads of primitives to use.
 
+So in the same way that ReactDOM has these known primitives such as div and h1,
+ReactThreeFiber has boxGeometry and ambientLight, and way more.
+
+And this makes the life of a developer way easier!
+As you don't have to import every thing you have to use.
 -->
 
 ---
@@ -487,6 +529,10 @@ export default (props) => (
   />
 )
 
+<!--
+So here is our final Hello World of the talk, but this time with React Three Fiber.
+-->
+
 ---
 
 <R3FSlide>
@@ -494,7 +540,15 @@ export default (props) => (
 </R3FSlide>
 
 <!--
+And once again, here we have our awesome spinning cube!
 
+So now you might think, well Tim Awesome!
+Thanks for stealing 20 minutes of my life by showing me how to create a useless spinning cube!
+
+However, it's not as useless as you might think haha.
+Since the concepts we've covered with this example, already covers everything you'll need to know to create stunning 3D animations!
+
+By simply changing your geometry of a cube into a model you've created in Blender or Cinema4D, you'll be able to showcase some awesome models.
 -->
 
 ---
@@ -509,21 +563,4 @@ export default (props) => (
 
 ---
 
-<!-- IDEA: Show a 'Thanks' slide in here -->
-
-<RetroSlide>
-    <h2 className="white">The Future of 3d on the Web</h2>
-    <span>press 'space' to start</span>
-</RetroSlide>
-
-<!--
-
--->
-
----
-
-# Want to know more?
-
-Course by Bruno Simon: `https://threejs-journey.com/`
-
-or let's have a coffee! 😁
+<Ending/>
