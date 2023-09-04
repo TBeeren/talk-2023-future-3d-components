@@ -1,6 +1,6 @@
 import { RocketPlanet } from "../RocketPlanet/RocketPlanet";
 import { Arcade } from "../Arcade/Arcade";
-import React, { useMemo, useRef, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useFrame, useThree } from "@react-three/fiber";
 import * as THREE from "three";
 import CameraControls from "camera-controls";
@@ -31,6 +31,13 @@ export const LandingModel = (props) => {
     groupRef.current.rotation.y += 0.5 * delta * acceleration;
     arcadeRef.current.position.y = bouncePosition(0.3, 0.01, -0.135);
   });
+
+  const handleArrowUpEvent = (e) => e.key === "ArrowUp" ? setZoom(true) : e.key === "ArrowDown" ? setZoom(false) : null;
+
+  useEffect(() => {
+    document.addEventListener("keydown", handleArrowUpEvent);
+  }, []);
+
 
   return (
     <>
