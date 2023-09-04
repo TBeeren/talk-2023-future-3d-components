@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import ReactDOM from "react-dom";
 import { AppContainer } from "react-hot-loader";
@@ -7,6 +7,7 @@ import { Deck } from "spectacle";
 import slides, { transitions } from "./presentation/index.mdx";
 import { createRoot } from "react-dom/client";
 import theme from "./presentation/theme";
+import Timer from "./src/components/Timer";
 
 require("normalize.css");
 
@@ -27,14 +28,26 @@ const creeperTransition = (transitioning, forward) => {
 
 const container = document.getElementById("root");
 const root = createRoot(container);
-root.render(
-  <AppContainer errorReporter={CustomErrorReporter}>
+
+const Presentation = () => {
+  const [elapsedTime, setElapsedTime] = useState(0);
+  return (
     <Deck controls={false} progress="none" transition={["fade"]} theme={theme}>
       {slides.map((S, i) => {
         const transition = transitions[i] || null;
-        return <S transition={transition} key={`slide-${i}`}/>;
+        return (
+          <>
+            <S transition={transition} key={`slide-${i}`}/>
+            <Timer totalSlides={40} talkDurationInMinutes={20} elapsedTime={elapsedTime} setElapsedTime={setElapsedTime}/>
+          </>
+        );
       })}
-    </Deck>
+    </Deck>);
+};
+
+root.render(
+  <AppContainer errorReporter={CustomErrorReporter}>
+    <Presentation />
   </AppContainer>
 );
 
