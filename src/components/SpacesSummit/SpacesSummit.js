@@ -1,6 +1,10 @@
 import React from "react";
 import styled from "styled-components";
+
 import "../../../presentation/font/Produkt-Light.ttf";
+import "../../../presentation/font/MartelSans-Bold.ttf";
+import "../../../presentation/font/MartelSans-SemiBold.ttf";
+
 
 import spacesSummitLogo from "../../../assets/spaces-summit-logo.png";
 import bolComLogo from "../../../assets/bol-logo.svg";

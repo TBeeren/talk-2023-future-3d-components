@@ -57,7 +57,7 @@ _CodePane.propTypes = { code: PropTypes.string,
   language: PropTypes.string };
 
 const Paragraph = styled.p `
-  font-family: "Martel Sans", serif;
+  font-family: "MartelSans-SemiBold", serif;
   font-size: 2rem;
   font-weight: 300;
   color: white;

@@ -11,8 +11,8 @@ export const colors = {
 const exportTheme = theme(
   colors,
   {
-    primary: "Martel Sans",
-    secondary: "Martel Sans"
+    primary: "MartelSans-Bold",
+    secondary: "MartelSans-SemiBold"
   },
   {
     components: {
