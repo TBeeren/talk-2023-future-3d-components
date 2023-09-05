@@ -32,18 +32,19 @@ const root = createRoot(container);
 const Presentation = () => {
   const [elapsedTime, setElapsedTime] = useState(0);
   return (
-    <Deck controls={false} progress="none" transition={["fade"]} theme={theme}>
-      {slides.map((S, i) => {
-        const transition = transitions[i] || null;
-        return (
-          <>
+    <>
+      <Deck controls={false} progress="none" transition={["fade"]} theme={theme}>
+        {slides.map((S, i) => {
+          const transition = transitions[i] || null;
+          return (
             <S transition={transition} key={`slide-${i}`}/>
-            <Timer totalSlides={40} talkDurationInMinutes={20} elapsedTime={elapsedTime} setElapsedTime={setElapsedTime}/>
-          </>
-        );
-      })}
-    </Deck>);
+          );
+        })}
+      </Deck>
+      <Timer totalSlides={40} talkDurationInMinutes={20} elapsedTime={elapsedTime} setElapsedTime={setElapsedTime}/>
+    </>);
 };
+
 
 root.render(
   <AppContainer errorReporter={CustomErrorReporter}>
