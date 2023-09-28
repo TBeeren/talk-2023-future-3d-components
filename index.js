@@ -17,15 +17,6 @@ CustomErrorReporter.propTypes = {
   error: PropTypes.instanceOf(Error).isRequired
 };
 
-const creeperTransition = (transitioning, forward) => {
-  const offset = forward ? 100 : -100;
-  return {
-    transform: `
-      translate3d(0,${transitioning ? offset : 0}%, 0)
-    `
-  };
-};
-
 const container = document.getElementById("root");
 const root = createRoot(container);
 
@@ -41,16 +32,24 @@ const Presentation = () => {
           );
         })}
       </Deck>
-      <Timer totalSlides={36} talkDurationInMinutes={20} elapsedTime={elapsedTime} setElapsedTime={setElapsedTime}/>
+      <Timer totalSlides={36} talkDurationInMinutes={30} elapsedTime={elapsedTime} setElapsedTime={setElapsedTime}/>
     </>);
 };
-
 
 root.render(
   <AppContainer errorReporter={CustomErrorReporter}>
     <Presentation />
   </AppContainer>
 );
+
+const creeperTransition = (transitioning, forward) => {
+  const offset = forward ? 100 : -100;
+  return {
+    transform: `
+      translate3d(0,${transitioning ? offset : 0}%, 0)
+    `
+  };
+};
 
 if (module.hot) {
   module.hot.accept(() => {

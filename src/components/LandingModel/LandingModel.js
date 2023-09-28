@@ -1,6 +1,6 @@
 import { RocketPlanet } from "../RocketPlanet/RocketPlanet";
 import { Arcade } from "../Arcade/Arcade";
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { useFrame, useThree } from "@react-three/fiber";
 import * as THREE from "three";
 import CameraControls from "camera-controls";
@@ -40,20 +40,17 @@ export const LandingModel = (props) => {
 
 
   return (
-    <>
-      {/* <OrbitControls camera={camera}/>*/}
-      <group {...props} ref={groupRef} position={[0.2, -0.1, 0]}>
-        <RocketPlanet scale={0.25}/>
-        <Arcade
-          scale={0.1}
-          reference={arcadeRef}
-          rotation={[0, 0.1, 0.03]}
-          position={[-0.05, -0.15, 0.7]}
-          zoomToView={() => setZoom(!zoom)}
-        />
-        <Controls zoom={zoom} focus={arcadeRef}/>
-      </group>
-    </>
+    <group {...props} ref={groupRef} position={[0.2, -0.1, 0]}>
+      <RocketPlanet scale={0.25}/>
+      <Arcade
+        scale={0.015}
+        reference={arcadeRef}
+        rotation={[0, -0.2, 0.03]}
+        position={[-0.14, -0.15, 0.47]}
+        zoomToView={() => setZoom(!zoom)}
+      />
+      <Controls zoom={zoom} focus={arcadeRef}/>
+    </group>
   );
 };
 
@@ -65,8 +62,8 @@ const Controls = ({ zoom, focus, pos = new THREE.Vector3(), look = new THREE.Vec
   return useFrame((state, delta) => {
     const zoomedPos = focus.current.position;
     if (zoom) {
-      pos.set(zoomedPos.x + 0.15, zoomedPos.y + 0.04, zoomedPos.z - 0.11);
-      look.set(zoomedPos.x + 0.14, zoomedPos.y + 0.01, zoomedPos.z - 0.2);
+      pos.set(zoomedPos.x + 0.2, zoomedPos.y + 0.02, zoomedPos.z + 0.13);
+      look.set(zoomedPos.x + 0.27, zoomedPos.y + 0.01, zoomedPos.z - 0.2);
       if (state.camera.fov > 35) {
         state.camera.fov -= 0.2;
       }

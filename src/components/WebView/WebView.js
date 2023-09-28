@@ -13,8 +13,8 @@ const WebView = ({ src, title } = props) => (
   >
     <iframe
       style={{
-        width: "80%",
-        height: "50%"
+        width: "100%",
+        height: "80%"
       }}
       src={src}
       title={title}

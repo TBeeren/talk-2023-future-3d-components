@@ -3,12 +3,10 @@ import { Heading, Slide } from "spectacle";
 import { MDXProvider } from "@mdx-js/tag";
 import components from "./components";
 
-// DEFAULT LAYOUT
-
 export const DefaultSlide = ({ children, ...rest }) => (
   <Slide bgColor="#12071f" contentStyles={{
     maxHeight: "100vh",
-    maxWidth: "1200px"
+    maxWidth: "1400px"
   }}{...rest}
   >
     <MDXProvider components={components}>{children}</MDXProvider>
@@ -146,7 +144,7 @@ export const LandingSlide = ({ children, ...rest }) => (
   </Slide>
 );
 
-export const SpacesSummitSlide = ({ children, ...rest }) => (
+export const IntroSlide = ({ children, ...rest }) => (
   <Slide bgColor="#0000A4" contentStyles={{
     maxHeight: "100%",
     maxWidth: "100%",

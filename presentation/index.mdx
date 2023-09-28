@@ -1,20 +1,18 @@
 import CodeSlide from 'spectacle-code-slide';
 
 import './index.css';
-import './font/Produkt-Light.ttf';
 
-import {R3FSlide, RetroSlide, ChapterSlide, SpacesSummitSlide, DarkSlide} from './slides';
-import CodeExample from './code/code.example'
+import {R3FSlide, DarkSlide} from './slides';
 
 import LandingPage from '../src/components/LandingPage';
 import Cube from '../src/components/Cube'
-import SpacesSummit from '../src/components/SpacesSummit'
 import Ending from '../src/components/Ending'
-import WebView from "../src/components/WebView"
+import WebView from '../src/components/WebView'
+import ConferenceIntro from '../src/components/ConferenceIntro'
+import TwitterHandle from '../src/components/TwitterHandle'
 
-<SpacesSummitSlide>
-    <SpacesSummit/>
-</SpacesSummitSlide>
+<ConferenceIntro name="Frontmania 2023"/>
+<TwitterHandle/>
 
 <!--
 Hi everyone! Thanks for being here!
@@ -74,6 +72,11 @@ import cat from '../assets/webp/small-cat.jpeg.webp'
 <!--
 This little guy also looks really disappointed by his new toy.
 -->
+
+---
+
+Raise your hand if this ever happened to you ✋🏼
+
 
 ---
 
@@ -195,7 +198,7 @@ import shopifyLogo from '../assets/shopify_logo.svg'
 import shopifyAr from '../assets/webp/shopify_ar.jpeg.webp'
 
 <img src={shopifyLogo} style={{ width: '20%', marginBottom: '20px'}} />
-<img src={shopifyAr} style={{ width: '100%', display: 'block', margin: 'auto' }} />
+<img src={shopifyAr} style={{ width: '80%', display: 'block', margin: 'auto' }} />
 
 <!--
 Another example is Shopify. As they also saw this problem occurring from their clients using shopify as store.
@@ -208,7 +211,7 @@ import shopifyLogo from '../assets/shopify_logo.svg'
 import dogs from '../assets/webp/shopify-dogs.png.webp'
 
 <img src={shopifyLogo} style={{ width: '20%', marginBottom: '20px'}} />
-<img src={dogs} style={{ width: '70%', display: 'block', margin: 'auto' }} />
+<img src={dogs} style={{ width: '50%', display: 'block', margin: 'auto' }} />
 
 <!--
 One of the stores who tried this feature, was Gunner Kennels - which is known for their `Kennels`.
@@ -261,21 +264,18 @@ but they’re rendering images on scroll - as you can see here in the networking
 
 ---
 
-import canon from '../assets/canon.mp4'
+<!---
+Apple Iphone 15 Example
+-->
+
+import iphone from '../assets/Iphone15.mp4'
 
 <video
-  src={canon}
+  src={iphone}
   autoPlay
   loop
-  style={{ width: '100%' }}
+  style={{ width: '80%' }}
 />
-
-<!--
-And while diving further into this space I found a javascript library which people used to create stunning 3d websites.
-Here are some examples:
-
-And yeah, they might have put all their time and energy into creating the 3D experience and not that much into the buggy text 😆
--->
 
 ---
 
@@ -284,6 +284,24 @@ And yeah, they might have put all their time and energy into creating the 3D exp
 <!--
 Let's talk about the tech!
 -->
+
+---
+
+import triangles from '../assets/webp/triangles.png.webp'
+
+<img src={triangles} style={{ width: '60%'}} />
+
+---
+
+import verticesAndFaces from '../assets/webp/vertex_and_faces.png.webp'
+
+<img src={verticesAndFaces} style={{ width: '60%'}} />
+
+---
+
+import dolphin from '../assets/webp/dolphin.png.webp'
+
+<img src={dolphin} style={{ width: '80%'}} />
 
 ---
 
@@ -478,13 +496,16 @@ export default (props) => (
       { loc: [7, 11] },
       { loc: [12, 18] },
       { loc: [19, 20] },
-      { loc: [20, 25] },
+      { loc: [20, 26] },
       { loc: [26, 30] },
       { loc: [30, 34] },
       { loc: [38, 39] },
+      { loc: [39, 40] },
       { loc: [40, 41] },
       { loc: [41, 42] },
-      { loc: [43, 47] },
+      { loc: [42, 45] },
+      { loc: [45, 46] },
+      { loc: [49, 50] },
     ]}
   />
 )
@@ -513,20 +534,78 @@ By simply changing your geometry of a cube into a model you've created in Blende
 
 ---
 
-import reply from '../assets/reply.png'
+<DarkSlide>
+  <WebView title={"R3F - Example Portals"} src={"https://codesandbox.io/embed/enter-portals-9m4tpc?fontsize=14&hidenavigation=1&theme=dark"}/>
+</DarkSlide>
+<TwitterHandle credits={"0xca0a"}/>
 
-<img src={reply} style={{ width: '55%'}} />
+---
+
+<DarkSlide>
+  <WebView title={"R3F - Example Ping Pong Interaction"} src={"https://codesandbox.io/embed/ping-pong-0mgum?fontsize=14&hidenavigation=1&theme=dark"}/>
+</DarkSlide>
+<TwitterHandle credits={"0xca0a"}/>
+
+---
+
+<DarkSlide>
+  <WebView title={"R3F - Example Bruno Simon"} src={"https://bruno-simon.com/"}/>
+</DarkSlide>
+<TwitterHandle credits={"bruno_simon"}/>
+
+---
+
+# Community
+
+A complete ecosystem, developed and maintained by `PMNDRS`
+
+---
+
+import community from '../assets/webp/community.png.webp';
+
+<img src={community} style={{ width: '60%' }} />
+
+---
+
+# React Three Drei
+
+Component based `helpers/ hooks` to make development easier
+
+---
+
+<p> Can `Drei` make it even easier? </p>
+
+---
+
+# Gizmos
+Helper to transform objects in 3D spaces
+
+---
+
+import gizmo from '../assets/gizmo.png';
+
+<img src={gizmo} style={{ width: '90%' }} />
+
+---
+
+<DarkSlide>
+  <WebView title={"Drei - Example PivotControls"} src={"https://codesandbox.io/embed/object-gizmo-controls-forked-9zy79h?fontsize=14&hidenavigation=1&theme=dark"}/>
+</DarkSlide>
+<TwitterHandle credits={"tim_beeren"}/>
+
+---
+
+# Performance
+Hands-on tools to see how your application is performing
 
 ---
 
 <R3FSlide>
     <LandingPage/>
 </R3FSlide>
-
-<!--
-
--->
+<TwitterHandle/>
 
 ---
 
 <Ending/>
+<TwitterHandle/>

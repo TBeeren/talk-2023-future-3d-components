@@ -2,9 +2,10 @@ import React, { useRef } from "react";
 import Graphik from "../../../assets/fonts/graphik.json";
 import { FontLoader } from "three/addons/loaders/FontLoader";
 
+
 const WelcomeText = () => {
   const textRef = useRef();
-  const text = "Spaces Summit 2023";
+  const text = "Frontmania 2023";
   const graphikFont = new FontLoader().parse(Graphik);
   const textOptions = {
     font: graphikFont,
@@ -30,7 +31,7 @@ const WelcomeText = () => {
   };
 
   return (
-    <group position={[-0.25, 0.02, 0.3]} rotation={[0, -0.2, 0]} ref={textRef}>
+    <group position={[-0.15, 0.02, 0.3]} rotation={[0, -0.2, 0]} ref={textRef}>
       <mesh>
         <textGeometry attach="geometry" args={[text, sideOptions]}/>
         <meshLambertMaterial attach="material" color={"#0000a4"}/>

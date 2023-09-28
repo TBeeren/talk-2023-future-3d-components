@@ -1,10 +1,10 @@
-import React from 'react'
+import React from "react";
 import {
   Canvas,
   useFrame
-} from 'react-three-fiber'
+} from "@react-three/fiber";
 
-function Box() {
+const Box = () => {
   const [
     boxRotation,
     setBoxRotation
@@ -30,21 +30,21 @@ function Box() {
       />
       <meshStandardMaterial
         attach="material"
-        color="#433F81"
+        color="#0ABFE5"
       />
     </mesh>
   );
-}
+};
 
-function App(props) {
-  return (
-    <Canvas>
-      <Box />
+const App = () => (
+  <Canvas>
+    <Box />
+    <ambientLight />
+    <directionalLight
+      args={["#FFFFFF", 0.5]}
+    />
+  </Canvas>
+);
 
-      <ambientLight />
-      <directionalLight
-        args={["#FFFFFF", 0.5]}
-      />
-    </Canvas>
-  );
-}
+
+export default App;
