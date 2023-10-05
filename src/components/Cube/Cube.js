@@ -4,7 +4,7 @@ import {
   useFrame
 } from "@react-three/fiber";
 
-const Box = () => {
+const Box = ({color = "#0ABFE5"}) => {
   const [
     boxRotation,
     setBoxRotation
@@ -31,15 +31,15 @@ const Box = () => {
       />
       <meshStandardMaterial
         attach="material"
-        color="#0ABFE5"
+        color={color}
       />
     </mesh>
   );
 };
 
-const Cube = () => (
+const Cube = ({color}) => (
   <Canvas>
-    <Box />
+    <Box color={color}/>
     <ambientLight />
     <directionalLight
       args={["#FFFFFF", 0.5]}

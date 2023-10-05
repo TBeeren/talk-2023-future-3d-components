@@ -125,7 +125,7 @@ import covid from '../assets/webp/impact_covid.jpeg.webp'
 
 Impact of covid-19 on commerce
 
-<img src={covid} style={{ width: '100%' }} />
+<img src={covid} style={{ width: '80%' }} />
 
 <!--
 Because of that, loads of niches were impacted.
@@ -293,12 +293,6 @@ import triangles from '../assets/webp/triangles.png.webp'
 
 ---
 
-import verticesAndFaces from '../assets/webp/vertex_and_faces.png.webp'
-
-<img src={verticesAndFaces} style={{ width: '60%'}} />
-
----
-
 import dolphin from '../assets/webp/dolphin.png.webp'
 
 <img src={dolphin} style={{ width: '80%'}} />
@@ -363,7 +357,7 @@ But I just want to show you how much code it requires to create a hello world ex
 
 import webglTriangle from '../assets/webp/webgl-triangle.png.webp';
 
-<img src={webglTriangle} style={{ width: '75%' }} />
+<img src={webglTriangle} style={{ width: '50%' }} />
 
 <!--
 And when running this, I expected this much of code to be something really cool once it is rendered in the browser.
@@ -432,14 +426,9 @@ And we'll call the render loop, which will be called by the browser 60 times a s
 
 ---
 
-import cube from '../assets/cube.mp4';
-
-<video
-  src={cube}
-  autoPlay
-  loop
-  style={{ width: '60%' }}
-/>
+<R3FSlide>
+  <Cube color={"#f79d00"}/>
+</R3FSlide>
 
 <!--
 So once this will be rendered, we've made ourselves this beautiful rotating Cube!
@@ -573,7 +562,15 @@ Component based `helpers/ hooks` to make development easier
 
 ---
 
-<p> Can `Drei` make it even easier? </p>
+# Scroll Controls
+Creates a scrollable container in front of the canvas
+
+---
+
+<DarkSlide>
+  <WebView title={"Drei - Example ScollControls"} src={"https://codesandbox.io/embed/m1-scrollcontrols-4m0d0?fontsize=14&hidenavigation=1&theme=dark"}/>
+</DarkSlide>
+<TwitterHandle credits={"0xca0a"}/>
 
 ---
 
@@ -587,6 +584,8 @@ import gizmo from '../assets/gizmo.png';
 <img src={gizmo} style={{ width: '90%' }} />
 
 ---
+
+
 
 <DarkSlide>
   <WebView title={"Drei - Example PivotControls"} src={"https://codesandbox.io/embed/object-gizmo-controls-forked-9zy79h?fontsize=14&hidenavigation=1&theme=dark"}/>

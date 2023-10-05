@@ -32,7 +32,7 @@ const Presentation = () => {
           );
         })}
       </Deck>
-      <Timer totalSlides={36} talkDurationInMinutes={30} elapsedTime={elapsedTime} setElapsedTime={setElapsedTime}/>
+      <Timer totalSlides={50} talkDurationInMinutes={35} elapsedTime={elapsedTime} setElapsedTime={setElapsedTime}/>
     </>);
 };
 
