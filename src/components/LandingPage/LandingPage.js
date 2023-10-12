@@ -34,7 +34,7 @@ const LandingPage = () => (
 
     <Suspense>
       <OrbitControls makeDefault/>
-      <Cloud opacity={0.2} speed={0.2} width={5} depth={6} segments={25}/>
+      <Cloud opacity={0.2} speed={0.2} width={5} depth={7} segments={25}/>
       <Stars/>
       <LandingModel/>
       <WelcomeText/>

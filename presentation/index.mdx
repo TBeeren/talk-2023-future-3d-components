@@ -325,6 +325,7 @@ So WebGL, how does it work? And is it easy to develop with?
 import WebGLExample from './code/webgl-hello-world.example'
 
 export default (props) => (
+  <>
   <CodeSlide
     {...props}
     lang="jsx"
@@ -344,6 +345,8 @@ export default (props) => (
       { loc: [157, 168] }
     ]}
   />
+    <TwitterHandle credits={"JoshWComeau"}/>
+  </>
 )
 
 <!--
@@ -358,6 +361,7 @@ But I just want to show you how much code it requires to create a hello world ex
 import webglTriangle from '../assets/webp/webgl-triangle.png.webp';
 
 <img src={webglTriangle} style={{ width: '50%' }} />
+<TwitterHandle credits={"JoshWComeau"}/>
 
 <!--
 And when running this, I expected this much of code to be something really cool once it is rendered in the browser.
@@ -584,8 +588,6 @@ import gizmo from '../assets/gizmo.png';
 <img src={gizmo} style={{ width: '90%' }} />
 
 ---
-
-
 
 <DarkSlide>
   <WebView title={"Drei - Example PivotControls"} src={"https://codesandbox.io/embed/object-gizmo-controls-forked-9zy79h?fontsize=14&hidenavigation=1&theme=dark"}/>
